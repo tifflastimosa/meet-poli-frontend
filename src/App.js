@@ -30,6 +30,7 @@ class App extends Component {
               </Nav>
               </Container>
             </Navbar>
+            <img src="../../favicon.ico"></img>
           </header>
 
         <Routes>

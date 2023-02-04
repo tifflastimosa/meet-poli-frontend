@@ -37,7 +37,7 @@ class App extends Component {
           <Route exact path={"/"} element={
             <LandingPage />
           }/>
-          <Route exact path={"/memberCards"} element={
+          <Route exact path={"/memberCards/:id"} element={
             <SelectMemberCards />
           }/>
           <Route exact path={"/memberPage"} element={

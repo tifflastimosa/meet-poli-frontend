@@ -1,6 +1,9 @@
 import React from "react";
+import USAMap from "react-usa-map";
+
 
 const Home = () => {
+
 
     
     return (
@@ -9,7 +12,7 @@ const Home = () => {
           <div class="hero-image">
             <div className="title">
               <br></br>
-                <h1>Meet Poli</h1>
+                <h1>Select State</h1>
             </div>
           </div>
         </header>

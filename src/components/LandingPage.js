@@ -1,29 +1,54 @@
-import React from "react";
+import React, { Component } from "react";
 import USAMap from "react-usa-map";
+import states from "../states.json";
 
+class LandingPage extends Component {
 
-const Home = () => {
+  constructor() {
+    super();
+    this.state = {
+      usa: []
+    };
+  }
 
+  mapHandler = (event) => {
+    // alert(event.target.dataset.name);
+    console.log(event.target.dataset.name);
+  };
+  componentDidMount() {
+    this.setState({ usa: [...states.data] });
+  }
 
-    
-    return (
-      <div className="App">
-        <header>
-          <div class="hero-image">
-            <div className="title">
-              <br></br>
-                <h1>Select State</h1>
-            </div>
-          </div>
-        </header>
-            
-        <body>
+  statesFilling = () => {
+    const something = {};
+    this.state.usa.forEach((state, i) => {
+      const { abbreviation, name } = state.attributes;
+      let fill = "#85929E";
+      // if (name.includes("k")) {
+      //   fill = "#21B205";
+      // } else if (name.includes("x")) {
+      //   fill = "#DDAC04";
+      // }
 
-            
-        </body>
+      something[abbreviation] = {
+        fill,
+        // clickHandler: () => alert(`Hey This is sam! ${name} is your state`)
+      };
+    });
 
-      </div>
+    console.log(something);
+    return { ...something };
+  };
+
+  render() {
+    return ( 
+      <body>
+        <h1>Select State</h1>
+      <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
+      </body>
     )
+
+  }
 }
 
-export default Home;
+export default LandingPage;

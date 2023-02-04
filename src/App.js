@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import LandingPage from "./components/LandingPage"
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import SelectMemberCards from "./components/SelectMemberCards";
 
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
       <Routes>
         <Route exact path={"/"} element={
           <LandingPage />
+        }/>
+        <Route exact path={"/memberCards"} element={
+          <SelectMemberCards />
         }/>
       </Routes>
 

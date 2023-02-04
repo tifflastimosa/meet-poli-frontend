@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+
+Header {
+    font-family: 'Josefin Sans', sans-serif;
+}
+.membersPage {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.memberCard {
+    width: 18rem;
+}
+.smallImage {
+    width: 20%;
+    height: auto;
+  }
+
+.cardRow {
+    margin-top: 15px;
+}
+
+.card {
+    margin-top: 15px;
+}

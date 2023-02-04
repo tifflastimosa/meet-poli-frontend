@@ -4,6 +4,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
+
 import '../styling/SelectRepCards.css';
 
 function chooseColor(party) {
@@ -15,6 +17,7 @@ function chooseColor(party) {
 }
 
 const SelectMemberCards = ({state, MembersByState}) => {
+    let navigate = useNavigate();
     return (
         <div className= "App">
             <Container className= "main-container">
@@ -35,7 +38,7 @@ const SelectMemberCards = ({state, MembersByState}) => {
                                     <Card.Text>
                                     Party
                                     </Card.Text>
-                                    <Button variant="primary">Learn more</Button>
+                                    <Button variant="primary" onClick={() => navigate("/memberPage")}>Learn more</Button>
                                 </Card.Body>
                                 </Card>
                             </Col>
@@ -55,7 +58,7 @@ const SelectMemberCards = ({state, MembersByState}) => {
                                     <Card.Text>
                                     Party
                                     </Card.Text>
-                                    <Button variant="primary">Learn more</Button>
+                                    <Button variant="danger" onClick={() => navigate("/memberPage")}>Learn more</Button>
                                 </Card.Body>
                                 </Card>
                             </Col>

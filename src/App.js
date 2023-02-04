@@ -5,6 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 import LandingPage from "./components/LandingPage"
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import SelectMemberCards from "./components/SelectMemberCards";
 import USAMap from "react-usa-map";
 import states from "./states.json";
 
@@ -59,24 +60,31 @@ class App extends Component {
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
             
-                
-                <Nav className="ml-auto">
-    
-                  <Nav.Link as={Link} to={"/"}>
-                    Blank
-                  </Nav.Link>
-                </Nav>
-    
-             
-            </Container>
-          </Navbar>
-          </header>
-    
-          <Routes>
-            <Route exact path={"/"} element={
-              <LandingPage />
-            }/>
-          </Routes>
+            <Nav className="ml-auto">
+
+              <Nav.Link as={Link} to={"/locations"}>
+                Blank
+              </Nav.Link>
+            </Nav>
+
+         
+        </Container>
+      </Navbar>
+      </header>
+
+      
+      <Routes>
+        <Route exact path={"/"} element={
+          <LandingPage />
+        }/>
+        <Route exact path={"/memberCards"} element={
+          <SelectMemberCards />
+        }/>
+      </Routes>
+
+    </div>
+  );
+}
 
           <body>
           <USAMap customize={this.statesFilling()} onClick={this.mapHandler} />
